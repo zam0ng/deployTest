@@ -42,12 +42,11 @@ app.use(express.urlencoded({ extended: false }));
 // app.use("/estate_imgs",express.static(path.join(__dirname,"imgs","estate")));
 // app.use("/img",express.static(path.join(__dirname,"uploads")));
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "http://3.37.244.154", "http://ec2-3-37-244-154.ap-northeast-2.compute.amazonaws.com", "http://www.busiman.shop"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: ["https://www.jaeyeong.site", "https://jaeyeong.site"],
+  credentials: true,
+}));
+
 app.use(
   session({
     secret: process.env.SESSION_KEY,

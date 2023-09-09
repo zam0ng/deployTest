@@ -5,7 +5,7 @@ var uuid = require("uuid").v4;
 const { isLogin } = require("../middleware/isLogin");
 const { User ,sequelize} = require("../models");
 
-var router = express.Router();
+const router = express.Router();
 var secretKey = process.env.TOSS_API_KEY;
 
 router.get("/",isLogin, function (req, res) {

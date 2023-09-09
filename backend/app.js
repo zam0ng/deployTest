@@ -1,8 +1,8 @@
 var debug = require('debug')('node-sample:server');
 var http = require('http');
-
+var https = require('https');
 var port = normalizePort(process.env.PORT || '3000');
-var server = http.createServer(app);
+var server = https.createServer(app);
 server.on('error', onError);
 server.on('listening', onListening);
 

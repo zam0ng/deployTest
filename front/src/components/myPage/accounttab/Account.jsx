@@ -78,7 +78,7 @@ const Account = () => {
 
   const deposit = async(el)=>{
     console.log(el);
-    const data = await axios.get("/",{
+    const data = await axios.get("/deposit",{
       params :{el},
       withCredentials :true,
     })

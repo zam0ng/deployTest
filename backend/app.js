@@ -112,7 +112,7 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-app.use("/", indexRouter);
+app.use("/deposit", indexRouter);
 app.use("/upload", uploadRouter);
 app.use("/login", loginRouter);
 app.use("/insert", getUserInfoRouter);

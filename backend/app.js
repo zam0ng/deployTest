@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 // app.use("/img",express.static(path.join(__dirname,"uploads")));
 
 app.use(cors({
-  origin: ["https://43.201.248.50","http://43.201.248.50"],
+  origin: ["https://43.201.248.50","http://43.201.248.50","http://ec2-13-209-74-57.ap-northeast-2.compute.amazonaws.com:8080"],
   credentials: true,
 }));
 

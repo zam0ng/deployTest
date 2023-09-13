@@ -137,17 +137,17 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// error handler
-// app.use(function (err, req, res, next) {
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "development" ? err : {};
+error handler
+app.use(function (err, req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
-//   res.status(err.status || 500);
-//   res.render("fail", {
-//     code: "UNKNOWN_ERROR",
-//     message: "알 수 없는 에러가 발생했습니다.",
-//   });
-// });
+  res.status(err.status || 500);
+  res.render("fail", {
+    code: "UNKNOWN_ERROR",
+    message: "알 수 없는 에러가 발생했습니다.",
+  });
+});
 
 app.listen(8080, () => {
   console.log("Server on");

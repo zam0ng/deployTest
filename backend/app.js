@@ -2,7 +2,7 @@ var debug = require('debug')('node-sample:server');
 var http = require('http');
 var https = require('https');
 var port = normalizePort(process.env.PORT || '3000');
-var server = https.createServer(app);
+var server = http.createServer(app);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -133,26 +133,26 @@ app.use("/admin", adminRouter);
 cron.schedule("0 0 * * *", setEstateAccept);
 // cron.schedule('57 10 * * *', setEstateAccept)
 
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
-// error handler
-app.use(function (err, req, res, next) {
-  if(err){
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+// // error handler
+// app.use(function (err, req, res, next) {
+//   if(err){
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  res.status(err.status || 500);
-  res.render("fail", {
-    code: "UNKNOWN_ERROR",
-    message: "알 수 없는 에러가 발생했습니다.",
-  });
-}
-else{
-  next();
-}
-});
+//   res.status(err.status || 500);
+//   res.render("fail", {
+//     code: "UNKNOWN_ERROR",
+//     message: "알 수 없는 에러가 발생했습니다.",
+//   });
+// }
+// else{
+//   next();
+// }
+// });
 
 app.listen(8080, () => {
   console.log("Server on");

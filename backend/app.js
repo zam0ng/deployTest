@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 // app.use("/img",express.static(path.join(__dirname,"uploads")));
 
 app.use(cors({
-  origin: ["https://www.jaeyeong.site"],
+  origin: ["https://api.jaeyeong.site"],
   credentials: true,
 }));
 

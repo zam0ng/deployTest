@@ -66,6 +66,6 @@ const createTestData = async () => {
 }
 
 
-createTestData();
+// createTestData();
 
 module.exports = db;
